@@ -27,7 +27,6 @@ const App = () => {
     const lenis = new Lenis({
       lerp: 0.08,
       smoothWheel: true,
-      smoothTouch: false,
       eventsTarget: document.documentElement,
       wheelEventsTarget: document.documentElement,
     });
