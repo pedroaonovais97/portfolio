@@ -34,3 +34,11 @@ All text lives in `src/content/portfolio.ts`.
 ```
 npm run build
 ```
+
+## Deploy to Vercel (with AI)
+
+1) Import the repo in Vercel.
+2) Add environment variables:
+   - `GROQ_API_KEY`
+   - `GROQ_MODEL` (optional, default in `api/chat.js`)
+3) Deploy. The serverless function lives at `api/chat.js` and is available at `/api/chat`.
