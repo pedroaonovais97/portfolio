@@ -104,7 +104,7 @@ export const portfolio = {
       {
         company: "Kaizen Gaming",
         role: "Software Engineer .NET",
-        period: "03/2024 - Present",
+        period: "03/2024 - 09/2025",
         summary: "",
         bullets: [
           "Led backend development in .NET with Kafka, SQL, Redis, MongoDB, and Docker for high-demand environments.",
