@@ -92,7 +92,7 @@ export const portfolio = {
       {
         company: "Pleo",
         role: "Software Engineer (Backend)",
-        period: "Sep 2025 - Present",
+        period: "09/2025 - Present",
         summary:
           "Backend engineer delivering Kotlin services and backoffice tooling with a focus on reliability and scale.",
         bullets: [
@@ -105,13 +105,12 @@ export const portfolio = {
         company: "Kaizen Gaming",
         role: "Software Engineer .NET",
         period: "03/2024 - 09/2025",
-        summary: "",
+        summary:
+          "Scope overlapped with Farfetch; focused on .NET backend reliability, observability, and scaling high-demand services.",
         bullets: [
-          "Led backend development in .NET with Kafka, SQL, Redis, MongoDB, and Docker for high-demand environments.",
-          "Owned monitoring and troubleshooting of microservices, resolving performance issues to keep systems stable.",
-          "Managed CI/CD deployments end-to-end, optimizing pipelines for continuous integration and delivery.",
-          "Designed and delivered new features in the team's cluster aligned with product requirements and scalability.",
-          "Applied advanced optimization techniques to improve throughput and resilience in distributed services.",
+          "Delivered backend services with Kafka, SQL, Redis, MongoDB, and Docker in production environments.",
+          "Improved monitoring, incident response, and performance tuning for microservices at scale.",
+          "Owned CI/CD workflows and feature delivery with a focus on long-term scalability.",
         ],
       },
       {
