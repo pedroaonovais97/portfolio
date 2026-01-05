@@ -11,14 +11,14 @@ const Projects = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-16 md:py-20">
       <Container className="flex flex-col gap-12">
         <SectionTitle
           eyebrow={portfolio.projects.eyebrow}
           title={portfolio.projects.title}
           subtitle={portfolio.projects.subtitle}
         />
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
           {portfolio.projects.items.map((project) => (
             <motion.div
               key={project.name}

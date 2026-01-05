@@ -19,8 +19,10 @@ const SectionTitle = ({ eyebrow, title, subtitle }: SectionTitleProps) => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.6 }}
     >
-      <p className="text-xs uppercase tracking-[0.4em] text-accent">{eyebrow}</p>
-      <h2 className="text-3xl font-semibold text-gradient title-glow md:text-4xl">{title}</h2>
+      <p className="text-[11px] uppercase tracking-[0.35em] text-accent md:text-xs md:tracking-[0.4em]">
+        {eyebrow}
+      </p>
+      <h2 className="text-2xl font-semibold text-gradient title-glow md:text-4xl">{title}</h2>
       <motion.div
         className="h-px w-24 bg-gradient-to-r from-accent via-neon to-accent2"
         initial={prefersReducedMotion ? false : { scaleX: 0 }}
@@ -30,7 +32,7 @@ const SectionTitle = ({ eyebrow, title, subtitle }: SectionTitleProps) => {
         style={{ transformOrigin: "0% 50%" }}
       />
       {subtitle ? (
-        <p className="max-w-2xl text-base text-muted md:text-lg">{subtitle}</p>
+        <p className="max-w-2xl text-sm text-muted md:text-lg">{subtitle}</p>
       ) : null}
     </motion.div>
   );

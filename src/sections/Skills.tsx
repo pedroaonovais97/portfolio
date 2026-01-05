@@ -22,7 +22,7 @@ const Skills = () => {
       };
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-16 md:py-20">
       <Container className="flex flex-col gap-12">
         <SectionTitle
           eyebrow={portfolio.skills.eyebrow}
@@ -34,7 +34,7 @@ const Skills = () => {
           initial={prefersReducedMotion ? false : "hidden"}
           whileInView={prefersReducedMotion ? undefined : "show"}
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-6 md:grid-cols-2"
+          className="grid gap-4 md:grid-cols-2 md:gap-6"
         >
           {portfolio.skills.categories.map((category) => (
             <motion.div key={category.title} variants={itemVariants}>

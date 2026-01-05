@@ -9,14 +9,14 @@ const Experience = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-16 md:py-20">
       <Container className="flex flex-col gap-12">
         <SectionTitle
           eyebrow={portfolio.experience.eyebrow}
           title={portfolio.experience.title}
           subtitle={portfolio.experience.subtitle}
         />
-        <div className="relative ml-4 border-l border-white/15">
+        <div className="relative ml-3 border-l border-white/15 md:ml-4">
           {portfolio.experience.roles.map((item) => (
             <motion.div
               key={`${item.company}-${item.role}`}
@@ -24,9 +24,9 @@ const Experience = () => {
               whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="relative pb-8 pl-8"
+              className="relative pb-6 pl-6 md:pb-8 md:pl-8"
             >
-              <span className="absolute -left-[9px] top-4 h-4 w-4 rounded-full bg-accent shadow-neon" />
+              <span className="absolute -left-[7px] top-4 h-3.5 w-3.5 rounded-full bg-accent shadow-neon md:-left-[9px] md:h-4 md:w-4" />
               <Card>
                 <div className="flex flex-col gap-2">
                   {item.period ? (

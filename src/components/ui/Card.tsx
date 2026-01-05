@@ -31,7 +31,7 @@ const Card = ({ children, className = "", tilt = false }: CardProps) => {
 
   return (
     <motion.div
-      className={`glass-panel neon-border group relative overflow-hidden rounded-3xl border-white/15 p-6 transition-shadow duration-300 hover:border-accent/40 hover:shadow-neon-strong ${className}`}
+      className={`glass-panel neon-border group relative overflow-hidden rounded-3xl border-white/15 p-5 transition-shadow duration-300 hover:border-accent/40 hover:shadow-neon-strong md:p-6 ${className}`}
       style={
         tilt && !prefersReducedMotion
           ? {

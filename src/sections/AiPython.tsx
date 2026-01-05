@@ -9,7 +9,7 @@ const AiPython = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="ai" className="py-20">
+    <section id="ai" className="py-16 md:py-20">
       <Container className="flex flex-col gap-12">
         <SectionTitle
           eyebrow={portfolio.aiPython.eyebrow}

@@ -19,27 +19,29 @@ const Hero = () => {
   const angleStep = (Math.PI * 2) / portfolio.hero.statusItems.length;
 
   return (
-    <section id="hero" className="relative overflow-hidden pb-20 pt-28">
+    <section id="hero" className="relative overflow-hidden pb-16 pt-24 md:pb-20 md:pt-28">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div
             style={prefersReducedMotion ? undefined : { y: parallaxY, opacity: heroOpacity }}
             initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
             animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-5 md:gap-6"
           >
             <p className="text-xs uppercase tracking-[0.5em] text-white/60">
               {portfolio.hero.kicker}
             </p>
             <div>
-              <h1 className="text-4xl font-semibold text-gradient title-glow md:text-5xl">
+              <h1 className="text-3xl font-semibold text-gradient title-glow md:text-5xl">
                 {portfolio.name}
               </h1>
-              <p className="mt-4 text-lg text-accent md:text-xl">{portfolio.title}</p>
+              <p className="mt-4 text-lg text-accent md:text-xl">
+                {portfolio.title}
+              </p>
             </div>
-            <p className="max-w-xl text-base text-muted md:text-lg">{portfolio.tagline}</p>
-            <div className="flex flex-wrap items-center gap-4">
+            <p className="max-w-xl text-sm text-muted md:text-lg">{portfolio.tagline}</p>
+            <div className="flex flex-wrap items-center gap-3 md:gap-4">
               <Button href="/PedroNovaisCV1.pdf" target="_blank" rel="noopener noreferrer">
                 <FiDownload />
                 {portfolio.hero.ctaPrimary}
@@ -49,11 +51,11 @@ const Hero = () => {
                 {portfolio.hero.ctaSecondary}
               </Button>
             </div>
-            <div className="flex items-center gap-4 text-sm text-white/70">
+            <div className="flex flex-wrap items-center gap-3 text-xs text-white/70 md:text-sm">
               {portfolio.socials.map((social) => (
                 <a
                   key={social.id}
-                  className="flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 transition hover:text-white"
+                  className="flex items-center gap-2 rounded-full border border-white/15 px-3 py-2 transition hover:text-white md:px-4"
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -63,8 +65,19 @@ const Hero = () => {
                 </a>
               ))}
             </div>
+            <div className="grid grid-cols-2 gap-2 md:hidden">
+              {portfolio.hero.statusItems.map((item, index) => (
+                <span
+                  key={item}
+                  className="glass-panel neon-border rounded-full px-3 py-1 text-center text-[11px] uppercase tracking-[0.18em] text-white/80 animate-pulse-soft"
+                  style={{ animationDelay: `${index * 0.4}s` }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </motion.div>
-          <div className="relative flex items-center justify-center">
+          <div className="relative hidden items-center justify-center md:flex">
             <motion.div
               className="relative h-[320px] w-[320px]"
               style={prefersReducedMotion ? undefined : { y: ringY, scale: ringScale }}
@@ -113,6 +126,18 @@ const Hero = () => {
                 />
               </div>
             </motion.div>
+          </div>
+        </div>
+        <div className="mt-10 flex justify-center md:hidden">
+          <div className="relative flex h-[220px] w-[220px] items-center justify-center">
+            <div className="absolute inset-0 rounded-3xl border border-white/15 bg-white/5 shadow-neon" />
+            <div className="relative flex h-[170px] w-[170px] items-center justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/5">
+              <img
+                src="/profile.jpg"
+                alt={portfolio.hero.profileAlt}
+                className="h-full w-full object-cover object-[50%_15%]"
+              />
+            </div>
           </div>
         </div>
       </Container>

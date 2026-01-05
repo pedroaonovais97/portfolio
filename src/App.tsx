@@ -72,7 +72,7 @@ const App = () => {
       <CursorGlow />
       <ScrollProgress />
       <Navbar />
-      <div className="fixed right-6 top-24 z-50 md:top-28">
+      <div className="fixed bottom-6 right-4 z-50 md:bottom-auto md:right-6 md:top-28">
         <ChatWidget chat={portfolio.aiPython.chat} triggerClassName="chat-pulse" />
       </div>
       <main className="relative z-10">

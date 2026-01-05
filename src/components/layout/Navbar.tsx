@@ -12,7 +12,10 @@ const Navbar = () => {
     <header className="fixed left-0 right-0 top-0 z-40">
       <Container>
         <div className="mt-4 flex items-center justify-between gap-4 rounded-full border border-white/10 bg-black/40 px-4 py-3 backdrop-blur-xl">
-          <a href="#hero" className="text-sm font-semibold tracking-[0.2em] text-white">
+          <a
+            href="#hero"
+            className="text-xs font-semibold tracking-[0.25em] text-white md:text-sm md:tracking-[0.2em]"
+          >
             {portfolio.name}
           </a>
           <nav className="hidden items-center gap-6 md:flex">
@@ -43,12 +46,12 @@ const Navbar = () => {
             </Button>
           </div>
         </div>
-        <nav className="mt-3 flex items-center gap-4 overflow-x-auto pb-2 md:hidden">
+        <nav className="mt-3 flex items-center gap-3 overflow-x-auto pb-2 md:hidden">
           {portfolio.navigation.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`whitespace-nowrap text-[11px] uppercase tracking-[0.3em] ${
+              className={`whitespace-nowrap text-[10px] uppercase tracking-[0.25em] ${
                 activeSection === item.id ? "text-accent" : "text-white/70"
               }`}
             >

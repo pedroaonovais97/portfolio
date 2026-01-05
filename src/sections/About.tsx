@@ -9,7 +9,7 @@ const About = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-16 md:py-20">
       <Container>
         <div className="grid gap-10 md:grid-cols-[0.6fr_1fr]">
           <SectionTitle
