@@ -65,17 +65,6 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-            <div className="grid grid-cols-2 gap-2 md:hidden">
-              {portfolio.hero.statusItems.map((item, index) => (
-                <span
-                  key={item}
-                  className="glass-panel neon-border rounded-full px-3 py-1 text-center text-[11px] uppercase tracking-[0.18em] text-white/80 animate-pulse-soft"
-                  style={{ animationDelay: `${index * 0.4}s` }}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
           </motion.div>
           <div className="relative hidden items-center justify-center md:flex">
             <motion.div
@@ -129,15 +118,60 @@ const Hero = () => {
           </div>
         </div>
         <div className="mt-10 flex justify-center md:hidden">
-          <div className="relative flex h-[220px] w-[220px] items-center justify-center">
-            <div className="absolute inset-0 rounded-3xl border border-white/15 bg-white/5 shadow-neon" />
-            <div className="relative flex h-[170px] w-[170px] items-center justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/5">
+          <div className="relative flex h-[240px] w-[240px] items-center justify-center">
+            <motion.div
+              className="absolute inset-0 rounded-3xl border border-white/15 bg-white/5 shadow-neon"
+              animate={prefersReducedMotion ? undefined : { rotate: 360 }}
+              transition={
+                prefersReducedMotion
+                  ? undefined
+                  : { duration: 26, ease: "linear", repeat: Infinity }
+              }
+            />
+            <motion.div
+              className="absolute inset-0 z-20"
+              animate={prefersReducedMotion ? undefined : { rotate: 360 }}
+              transition={
+                prefersReducedMotion
+                  ? undefined
+                  : { duration: 22, ease: "linear", repeat: Infinity }
+              }
+            >
+              {portfolio.hero.statusItems.map((item, index) => {
+                const angle = index * angleStep;
+                const x = Math.cos(angle) * 110;
+                const y = Math.sin(angle) * 110;
+                return (
+                  <div
+                    key={item}
+                    className="absolute left-1/2 top-1/2 z-10"
+                    style={{ transform: `translate(-50%, -50%) translate(${x}px, ${y}px)` }}
+                  >
+                    <motion.div
+                      className="glass-panel neon-border rounded-2xl px-3 py-1 text-center text-[10px] uppercase tracking-[0.18em] text-white/80"
+                      animate={prefersReducedMotion ? undefined : { rotate: -360 }}
+                      transition={
+                        prefersReducedMotion
+                          ? undefined
+                          : { duration: 22, ease: "linear", repeat: Infinity }
+                      }
+                    >
+                      {item}
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </motion.div>
+            <motion.div
+              className="relative z-0 flex h-[150px] w-[150px] items-center justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/5"
+              style={prefersReducedMotion ? undefined : { y: profileY, scale: profileScale }}
+            >
               <img
                 src="/profile.jpg"
                 alt={portfolio.hero.profileAlt}
                 className="h-full w-full object-cover object-[50%_15%]"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </Container>
