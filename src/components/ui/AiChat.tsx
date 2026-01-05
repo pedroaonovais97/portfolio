@@ -14,13 +14,13 @@ export type ChatContent = {
   promptsLabel: string;
   disclaimer: string;
   introMessage: string;
-  prompts: string[];
+  prompts: readonly string[];
   response: {
     intro: string;
     outro: string;
     fallback: string;
-    domains: Array<{ id: string; line: string }>;
-    points: Array<{ id: string; line: string }>;
+    domains: ReadonlyArray<{ id: string; line: string }>;
+    points: ReadonlyArray<{ id: string; line: string }>;
   };
 };
 
@@ -70,7 +70,10 @@ const AiChat = ({ chat }: AiChatProps) => {
     const trimmed = input.trim();
     if (!trimmed || isLoading) return;
 
-    const nextHistory = [...history, { role: "user", content: trimmed }];
+    const nextHistory: HistoryMessage[] = [
+      ...history,
+      { role: "user", content: trimmed },
+    ];
     setHistory(nextHistory);
     setInput("");
     setError("");
